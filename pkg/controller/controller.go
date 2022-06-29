@@ -226,6 +226,8 @@ func (c *notificationController) processQueueItem() (processNext bool) {
 		}
 	}
 
+	log.Infof("process resource %v\n", resource)
+	fmt.Printf("fmt: process resource %v\n", resource)
 	annotations, err := c.processResource(resource, logEntry)
 	if err != nil {
 		logEntry.Errorf("Failed to process: %v", err)
